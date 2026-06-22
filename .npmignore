@@ -1,0 +1,35 @@
+# Development tooling
+.specify/
+.spec/
+.claude/
+scripts/
+test/
+tests/
+
+# Config
+tsconfig.json
+vitest.config.ts
+eslint.config.js
+.prettierrc
+.prettierignore
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*

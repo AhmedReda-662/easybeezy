@@ -1,0 +1,71 @@
+# Source code (only dist/ is needed)
+src/
+
+# Build config
+tsconfig.json
+tsconfig.*.json
+
+# Development files
+node_modules/
+.npmrc
+.npmignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Testing
+test/
+tests/
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+.nyc_output/
+
+# Documentation (keep README)
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+
+# Config files
+eslint.config.js
+.prettierrc
+.prettierignore
+vitest.config.ts
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Spec Kit (development tooling)
+.specify/
+.spec/
+.claude/
+
+# Scripts
+scripts/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Misc
+*.tgz
+*.tar.gz
+*.zip

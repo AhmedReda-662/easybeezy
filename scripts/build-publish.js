@@ -35,7 +35,7 @@ try {
     platform: "node",
     target: "node18",
     format: "cjs",
-    outfile: join(OUT_DIR, "cli.js"),
+    outfile: join(OUT_DIR, "index.js"),
     banner: {
       js: "#!/usr/bin/env node",
     },
