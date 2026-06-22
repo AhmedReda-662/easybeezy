@@ -1,0 +1,26 @@
+{
+  "name": "@easybeezy/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "EasyBeezy core logic — generators, prompts, plugins",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

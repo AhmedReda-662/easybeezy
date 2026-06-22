@@ -1,0 +1,46 @@
+{
+  "name": "easybeezy",
+  "version": "0.1.0",
+  "description": "React project bootstrap generator with modular enhancements",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/easybeezy/easybeezy.git"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "scaffold",
+    "boilerplate",
+    "typescript",
+    "vite",
+    "frontend",
+    "generator"
+  ],
+  "license": "MIT",
+  "author": "Noah White",
+  "bin": {
+    "easybeezy": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node ../scripts/build-publish.js",
+    "prepublishOnly": "node ../../scripts/build-publish.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "inquirer": "^9.2.0",
+    "ora": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

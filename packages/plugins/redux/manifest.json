@@ -1,0 +1,25 @@
+{
+  "name": "redux-toolkit",
+  "description": "Predictable state container",
+  "dependencies": ["@reduxjs/toolkit", "react-redux"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/store.ts",
+      "target": "src/store/index.ts",
+      "template": false
+    },
+    {
+      "source": "src/hooks.ts",
+      "target": "src/store/hooks.ts",
+      "template": false
+    },
+    {
+      "source": "src/counterSlice.ts",
+      "target": "src/store/slices/counterSlice.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": ["zustand"]
+}

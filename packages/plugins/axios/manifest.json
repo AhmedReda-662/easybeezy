@@ -1,0 +1,20 @@
+{
+  "name": "axios",
+  "description": "HTTP client with interceptors",
+  "dependencies": ["axios"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/api.ts",
+      "target": "src/services/api.ts",
+      "template": false
+    },
+    {
+      "source": "src/client.ts",
+      "target": "src/shared/http/client.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

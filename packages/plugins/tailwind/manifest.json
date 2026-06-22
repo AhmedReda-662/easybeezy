@@ -1,0 +1,26 @@
+{
+  "name": "tailwindcss",
+  "description": "Utility-first CSS framework",
+  "dependencies": ["tailwindcss", "postcss", "autoprefixer"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/index.css",
+      "target": "src/index.css",
+      "template": false
+    }
+  ],
+  "configUpdates": [
+    {
+      "file": "postcss.config.js",
+      "action": "append",
+      "content": "export default {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n"
+    },
+    {
+      "file": "tailwind.config.js",
+      "action": "append",
+      "content": "/** @type {import('tailwindcss').Config} */\nexport default {\n  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n};\n"
+    }
+  ],
+  "conflictsWith": []
+}
