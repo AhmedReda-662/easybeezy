@@ -1,0 +1,16 @@
+{
+  "name": "supabase",
+  "description": "Open source Firebase alternative",
+  "category": "backend-services",
+  "dependencies": ["@supabase/supabase-js"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/supabase.ts",
+      "target": "src/shared/config/supabase.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": ["firebase"]
+}

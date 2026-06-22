@@ -1,6 +1,7 @@
 {
   "name": "axios",
   "description": "HTTP client with interceptors",
+  "category": "data-fetching",
   "dependencies": ["axios"],
   "devDependencies": [],
   "generatedFiles": [

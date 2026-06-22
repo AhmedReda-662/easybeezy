@@ -1,0 +1,16 @@
+{
+  "name": "sonner",
+  "description": "An opinionated toast notification library",
+  "category": "notifications",
+  "dependencies": ["sonner"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/toaster.tsx",
+      "target": "src/shared/ui/toaster.tsx",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": ["react-toastify"]
+}

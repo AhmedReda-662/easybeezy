@@ -1,0 +1,16 @@
+{
+  "name": "lint-staged",
+  "description": "Run linters on git staged files",
+  "category": "code-quality",
+  "dependencies": [],
+  "devDependencies": ["lint-staged"],
+  "generatedFiles": [],
+  "configUpdates": [
+    {
+      "file": "package.json",
+      "action": "merge",
+      "content": "\"lint-staged\": { \"src/**/*.{ts,tsx}\": [\"eslint --fix\", \"prettier --write\"] }"
+    }
+  ],
+  "conflictsWith": []
+}

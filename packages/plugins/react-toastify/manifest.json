@@ -1,0 +1,10 @@
+{
+  "name": "react-toastify",
+  "description": "React notification library",
+  "category": "notifications",
+  "dependencies": ["react-toastify"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["sonner"]
+}

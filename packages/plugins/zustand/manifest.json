@@ -1,6 +1,7 @@
 {
   "name": "zustand",
   "description": "Lightweight state management",
+  "category": "state-management",
   "dependencies": ["zustand"],
   "devDependencies": [],
   "generatedFiles": [

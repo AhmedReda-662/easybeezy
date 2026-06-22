@@ -1,0 +1,10 @@
+{
+  "name": "yup",
+  "description": "Schema builder for runtime value validation",
+  "category": "forms-validation",
+  "dependencies": ["yup"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["zod"]
+}

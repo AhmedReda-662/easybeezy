@@ -7,10 +7,10 @@ export { startSpinner, updateSpinner, succeedSpinner, failSpinner, stopSpinner }
 
 // Manifest
 export { loadPluginManifest, validateManifest } from "./manifest/parser.js";
-export type { PluginManifest, FileMapping, ConfigUpdate, ProjectConfig } from "./manifest/types.js";
+export type { PluginManifest, FileMapping, ConfigUpdate, ProjectConfig, PluginCategory } from "./manifest/types.js";
 
 // Plugins
-export { loadPlugins, getAllPlugins, getPluginByName, getAvailablePluginNames } from "./plugins/registry.js";
+export { loadPlugins, getAllPlugins, getPluginByName, getAvailablePluginNames, getPluginsByCategory, getCategories } from "./plugins/registry.js";
 export type { PluginRegistryEntry } from "./plugins/registry.js";
 export { checkPluginConflicts } from "./plugins/conflicts.js";
 export { uninstallPlugin } from "./plugins/uninstaller.js";

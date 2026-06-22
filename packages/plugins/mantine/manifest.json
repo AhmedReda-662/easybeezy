@@ -1,0 +1,10 @@
+{
+  "name": "mantine",
+  "description": "Full-featured React component library",
+  "category": "ui-libraries",
+  "dependencies": ["@mantine/core", "@mantine/hooks"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["mui", "antd", "chakra-ui"]
+}

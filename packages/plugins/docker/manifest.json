@@ -1,0 +1,26 @@
+{
+  "name": "docker",
+  "description": "Containerized development and deployment",
+  "category": "devops",
+  "dependencies": [],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "Dockerfile",
+      "target": "Dockerfile",
+      "template": false
+    },
+    {
+      "source": "docker-compose.yml",
+      "target": "docker-compose.yml",
+      "template": false
+    },
+    {
+      "source": ".dockerignore",
+      "target": ".dockerignore",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

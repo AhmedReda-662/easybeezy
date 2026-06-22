@@ -1,0 +1,10 @@
+{
+  "name": "mui",
+  "description": "Material UI - comprehensive React component library",
+  "category": "ui-libraries",
+  "dependencies": ["@mui/material", "@emotion/react", "@emotion/styled"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["antd", "chakra-ui"]
+}

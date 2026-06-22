@@ -1,0 +1,10 @@
+{
+  "name": "react-dropzone",
+  "description": "React hook for file upload drag-n-drop",
+  "category": "core-react",
+  "dependencies": ["react-dropzone"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": []
+}

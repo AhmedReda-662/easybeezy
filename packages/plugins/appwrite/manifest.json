@@ -1,0 +1,10 @@
+{
+  "name": "appwrite",
+  "description": "Open source backend server",
+  "category": "backend-services",
+  "dependencies": ["appwrite"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["firebase", "supabase"]
+}

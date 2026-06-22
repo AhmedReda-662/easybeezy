@@ -1,0 +1,21 @@
+{
+  "name": "tanstack-query",
+  "description": "Powerful async state management for React",
+  "category": "data-fetching",
+  "dependencies": ["@tanstack/react-query"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/queryClient.ts",
+      "target": "src/shared/query/queryClient.ts",
+      "template": false
+    },
+    {
+      "source": "src/providers.tsx",
+      "target": "src/shared/query/providers.tsx",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

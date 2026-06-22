@@ -1,6 +1,7 @@
 {
   "name": "redux-toolkit",
   "description": "Predictable state container",
+  "category": "state-management",
   "dependencies": ["@reduxjs/toolkit", "react-redux"],
   "devDependencies": [],
   "generatedFiles": [

@@ -1,0 +1,10 @@
+{
+  "name": "recharts",
+  "description": "Comprehensive charting library for React",
+  "category": "charts",
+  "dependencies": ["recharts"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": []
+}

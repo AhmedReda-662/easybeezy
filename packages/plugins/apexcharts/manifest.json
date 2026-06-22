@@ -1,0 +1,10 @@
+{
+  "name": "apexcharts",
+  "description": "Modern JavaScript Charting library",
+  "category": "charts",
+  "dependencies": ["apexcharts", "react-apexcharts"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": []
+}

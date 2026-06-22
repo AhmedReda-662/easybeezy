@@ -1,0 +1,16 @@
+{
+  "name": "commitlint",
+  "description": "Lint commit messages",
+  "category": "code-quality",
+  "dependencies": [],
+  "devDependencies": ["@commitlint/cli", "@commitlint/config-conventional"],
+  "generatedFiles": [
+    {
+      "source": "commitlint.config.js",
+      "target": "commitlint.config.js",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

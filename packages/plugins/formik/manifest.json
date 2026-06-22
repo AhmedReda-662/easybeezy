@@ -1,0 +1,10 @@
+{
+  "name": "formik",
+  "description": "Build forms in React, without tears",
+  "category": "forms-validation",
+  "dependencies": ["formik"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["react-hook-form"]
+}

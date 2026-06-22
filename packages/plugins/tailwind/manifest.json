@@ -1,6 +1,7 @@
 {
   "name": "tailwindcss",
   "description": "Utility-first CSS framework",
+  "category": "styling",
   "dependencies": ["tailwindcss", "postcss", "autoprefixer"],
   "devDependencies": [],
   "generatedFiles": [

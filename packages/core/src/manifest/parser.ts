@@ -21,6 +21,7 @@ export function loadPluginManifest(pluginDir: string): PluginManifest | null {
     return {
       name: manifest.name,
       description: manifest.description,
+      category: manifest.category ?? "core-react",
       dependencies: manifest.dependencies ?? [],
       devDependencies: manifest.devDependencies ?? [],
       generatedFiles: manifest.generatedFiles ?? [],

@@ -1,0 +1,16 @@
+{
+  "name": "cypress",
+  "description": "Fast, easy and reliable testing for anything that runs in a browser",
+  "category": "testing",
+  "dependencies": [],
+  "devDependencies": ["cypress"],
+  "generatedFiles": [
+    {
+      "source": "cypress.config.ts",
+      "target": "cypress.config.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": ["playwright"]
+}

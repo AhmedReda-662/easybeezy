@@ -1,0 +1,10 @@
+{
+  "name": "chakra-ui",
+  "description": "Simple, Modular & Accessible UI Components",
+  "category": "ui-libraries",
+  "dependencies": ["@chakra-ui/react", "@emotion/react", "@emotion/styled", "framer-motion"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["mui", "antd"]
+}

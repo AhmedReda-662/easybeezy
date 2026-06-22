@@ -1,0 +1,10 @@
+{
+  "name": "styled-components",
+  "description": "Visual primitives for the component age",
+  "category": "styling",
+  "dependencies": ["styled-components"],
+  "devDependencies": ["@types/styled-components"],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["tailwindcss"]
+}

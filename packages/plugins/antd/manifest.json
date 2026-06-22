@@ -1,0 +1,10 @@
+{
+  "name": "antd",
+  "description": "Ant Design - enterprise-level UI library",
+  "category": "ui-libraries",
+  "dependencies": ["antd"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["mui", "chakra-ui"]
+}

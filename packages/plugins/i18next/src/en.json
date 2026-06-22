@@ -1,0 +1,11 @@
+{
+  "app": {
+    "title": "My App",
+    "description": "Built with EasyBeezy"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  }
+}

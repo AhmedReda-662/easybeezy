@@ -6,8 +6,45 @@ export interface CreateAnswers {
   plugins: string[];
 }
 
+const CATEGORY_LABELS: Record<string, string> = {
+  "core-react": "Core React",
+  "state-management": "State Management",
+  "data-fetching": "Data Fetching",
+  "forms-validation": "Forms & Validation",
+  "styling": "Styling",
+  "ui-libraries": "UI Libraries",
+  "notifications": "Notifications",
+  "internationalization": "Internationalization",
+  "charts": "Charts",
+  "testing": "Testing",
+  "code-quality": "Code Quality",
+  "monitoring": "Monitoring",
+  "backend-services": "Backend Services",
+  "devops": "DevOps",
+};
+
 export async function promptCreateProject(): Promise<CreateAnswers> {
   const plugins = getAllPlugins();
+
+  // Group plugins by category
+  const grouped = new Map<string, typeof plugins>();
+  for (const plugin of plugins) {
+    const cat = plugin.manifest.category;
+    if (!grouped.has(cat)) grouped.set(cat, []);
+    grouped.get(cat)!.push(plugin);
+  }
+
+  // Build choices with category separators
+  const choices: (inquirer.Separator | { name: string; value: string })[] = [];
+  for (const [category, categoryPlugins] of grouped) {
+    choices.push(new inquirer.Separator(`── ${CATEGORY_LABELS[category] ?? category} ──`));
+    for (const p of categoryPlugins) {
+      choices.push({
+        name: `  ${p.name} — ${p.manifest.description}`,
+        value: p.name,
+      });
+    }
+  }
 
   const answers = await inquirer.prompt<CreateAnswers>([
     {
@@ -26,10 +63,7 @@ export async function promptCreateProject(): Promise<CreateAnswers> {
       type: "checkbox",
       name: "plugins",
       message: "Select plugins to install:",
-      choices: plugins.map((p) => ({
-        name: `${p.name} — ${p.manifest.description}`,
-        value: p.name,
-      })),
+      choices,
       when: plugins.length > 0,
     },
   ]);

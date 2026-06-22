@@ -1,0 +1,10 @@
+{
+  "name": "chartjs",
+  "description": "Simple yet flexible JavaScript charting",
+  "category": "charts",
+  "dependencies": ["chart.js", "react-chartjs-2"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": []
+}

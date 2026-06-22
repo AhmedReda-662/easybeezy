@@ -47,3 +47,12 @@ export function getPluginByName(name: string): PluginRegistryEntry | undefined {
 export function getAvailablePluginNames(): string[] {
   return registry.map((p) => p.name);
 }
+
+export function getPluginsByCategory(category: string): PluginRegistryEntry[] {
+  return registry.filter((p) => p.manifest.category === category);
+}
+
+export function getCategories(): string[] {
+  const categories = new Set(registry.map((p) => p.manifest.category));
+  return [...categories].sort();
+}

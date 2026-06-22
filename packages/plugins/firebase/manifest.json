@@ -1,0 +1,16 @@
+{
+  "name": "firebase",
+  "description": "Firebase backend services",
+  "category": "backend-services",
+  "dependencies": ["firebase"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/firebase.ts",
+      "target": "src/shared/config/firebase.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": ["supabase"]
+}

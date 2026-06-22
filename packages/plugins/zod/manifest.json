@@ -1,0 +1,16 @@
+{
+  "name": "zod",
+  "description": "TypeScript-first schema validation",
+  "category": "forms-validation",
+  "dependencies": ["zod"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/schemas.ts",
+      "target": "src/shared/validation/schemas.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": ["yup"]
+}

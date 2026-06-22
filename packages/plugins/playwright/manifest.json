@@ -1,0 +1,16 @@
+{
+  "name": "playwright",
+  "description": "Reliable end-to-end testing for modern web apps",
+  "category": "testing",
+  "dependencies": [],
+  "devDependencies": ["@playwright/test"],
+  "generatedFiles": [
+    {
+      "source": "playwright.config.ts",
+      "target": "playwright.config.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

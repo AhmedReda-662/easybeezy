@@ -1,0 +1,11 @@
+{
+  "app": {
+    "title": "تطبيقي",
+    "description": "بناء باستخدام EasyBeezy"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "about": "حول",
+    "contact": "اتصل بنا"
+  }
+}

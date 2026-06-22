@@ -1,0 +1,16 @@
+{
+  "name": "sentry",
+  "description": "Application monitoring and error tracking",
+  "category": "monitoring",
+  "dependencies": ["@sentry/react"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/sentry.ts",
+      "target": "src/shared/monitoring/sentry.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

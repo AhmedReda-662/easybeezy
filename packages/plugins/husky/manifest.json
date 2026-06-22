@@ -1,0 +1,10 @@
+{
+  "name": "husky",
+  "description": "Git hooks made easy",
+  "category": "code-quality",
+  "dependencies": [],
+  "devDependencies": ["husky"],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": []
+}

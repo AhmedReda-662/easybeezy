@@ -1,0 +1,26 @@
+{
+  "name": "i18next",
+  "description": "Internationalization framework for React",
+  "category": "internationalization",
+  "dependencies": ["i18next", "react-i18next"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/i18n.ts",
+      "target": "src/shared/i18n/index.ts",
+      "template": false
+    },
+    {
+      "source": "src/en.json",
+      "target": "src/locales/en/translation.json",
+      "template": false
+    },
+    {
+      "source": "src/ar.json",
+      "target": "src/locales/ar/translation.json",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

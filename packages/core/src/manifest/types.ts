@@ -1,6 +1,23 @@
+export type PluginCategory =
+  | "core-react"
+  | "state-management"
+  | "data-fetching"
+  | "forms-validation"
+  | "styling"
+  | "ui-libraries"
+  | "notifications"
+  | "internationalization"
+  | "charts"
+  | "testing"
+  | "code-quality"
+  | "monitoring"
+  | "backend-services"
+  | "devops";
+
 export interface PluginManifest {
   name: string;
   description: string;
+  category: PluginCategory;
   dependencies: string[];
   devDependencies: string[];
   generatedFiles: FileMapping[];

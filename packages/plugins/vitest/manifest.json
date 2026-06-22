@@ -1,0 +1,21 @@
+{
+  "name": "vitest",
+  "description": "Blazing fast unit test framework powered by Vite",
+  "category": "testing",
+  "dependencies": [],
+  "devDependencies": ["vitest", "@testing-library/react", "@testing-library/jest-dom"],
+  "generatedFiles": [
+    {
+      "source": "src/vitest-setup.ts",
+      "target": "src/vitest-setup.ts",
+      "template": false
+    },
+    {
+      "source": "vite.config.ts",
+      "target": "vite.config.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}

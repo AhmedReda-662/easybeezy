@@ -1,0 +1,10 @@
+{
+  "name": "jotai",
+  "description": "Primitive and flexible state management",
+  "category": "state-management",
+  "dependencies": ["jotai"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["redux-toolkit", "zustand"]
+}

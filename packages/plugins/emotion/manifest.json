@@ -1,0 +1,10 @@
+{
+  "name": "emotion",
+  "description": "CSS-in-JS library designed for high performance",
+  "category": "styling",
+  "dependencies": ["@emotion/react"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["tailwindcss"]
+}

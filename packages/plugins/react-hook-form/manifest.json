@@ -1,0 +1,10 @@
+{
+  "name": "react-hook-form",
+  "description": "Performant, flexible forms with easy validation",
+  "category": "forms-validation",
+  "dependencies": ["react-hook-form"],
+  "devDependencies": [],
+  "generatedFiles": [],
+  "configUpdates": [],
+  "conflictsWith": ["formik"]
+}

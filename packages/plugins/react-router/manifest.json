@@ -1,0 +1,16 @@
+{
+  "name": "react-router",
+  "description": "Declarative routing for React",
+  "category": "core-react",
+  "dependencies": ["react-router-dom"],
+  "devDependencies": [],
+  "generatedFiles": [
+    {
+      "source": "src/router.ts",
+      "target": "src/shared/router/index.ts",
+      "template": false
+    }
+  ],
+  "configUpdates": [],
+  "conflictsWith": []
+}
