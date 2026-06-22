@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyBeezy — React Project Bootstrap Generator</title>
+  <meta name="description" content="Skip the boilerplate. Build the product. EasyBeezy generates production-ready React projects in minutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --bg-code: #1a1a2e;
+      --text: #e4e4e7;
+      --text-dim: #71717a;
+      --yellow: #facc15;
+      --yellow-dim: #a38600;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --purple: #a855f7;
+      --border: #27272a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700; font-size: 1.25rem; color: var(--yellow);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-dim); text-decoration: none; font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links .btn-nav {
+      background: var(--yellow); color: #000; padding: 0.4rem 1rem;
+      border-radius: 6px; font-weight: 600; font-size: 0.85rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-links .btn-nav:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(250, 204, 21, 0.3);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 6rem 2rem 4rem; position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem;
+      color: var(--text-dim); margin-bottom: 2rem;
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800;
+      line-height: 1.1; margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--yellow) 0%, #fff 50%, var(--yellow) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 1.2rem; color: var(--text-dim); max-width: 550px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: var(--yellow); color: #000; padding: 0.8rem 2rem;
+      border-radius: 8px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(250, 204, 21, 0.3);
+    }
+    .btn-secondary {
+      background: var(--bg-card); color: var(--text);
+      border: 1px solid var(--border); padding: 0.8rem 2rem;
+      border-radius: 8px; font-weight: 600; font-size: 1rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--text-dim); }
+
+    /* TERMINAL */
+    .terminal-section { padding: 2rem 2rem 6rem; }
+    .terminal {
+      max-width: 700px; margin: 0 auto;
+      background: var(--bg-code); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    .terminal-header {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1rem; background: #0f0f23;
+      border-bottom: 1px solid var(--border);
+    }
+    .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .terminal-dot.red { background: #ff5f57; }
+    .terminal-dot.yellow { background: #febc2e; }
+    .terminal-dot.green { background: #28c840; }
+    .terminal-title {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+      color: var(--text-dim); margin-left: 0.5rem;
+    }
+    .terminal-body {
+      padding: 1.5rem; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem; line-height: 1.8;
+    }
+    .terminal-body .prompt { color: var(--green); }
+    .terminal-body .cmd { color: var(--yellow); }
+    .terminal-body .dim { color: var(--text-dim); }
+    .terminal-body .white { color: var(--text); }
+    .terminal-body .blue { color: var(--blue); }
+    .terminal-body .purple { color: var(--purple); }
+
+    /* FEATURES */
+    .features { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .features h2 {
+      text-align: center; font-size: 2.5rem; font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .features .subtitle {
+      text-align: center; color: var(--text-dim); font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--yellow-dim);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      font-size: 2rem; margin-bottom: 0.75rem;
+      width: 48px; height: 48px; display: flex; align-items: center;
+      justify-content: center; background: rgba(250, 204, 21, 0.1);
+      border-radius: 10px;
+    }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feature-card p { color: var(--text-dim); font-size: 0.9rem; }
+
+    /* PLUGINS */
+    .plugins { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+    .plugins h2 {
+      text-align: center; font-size: 2.5rem; font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .plugins .subtitle {
+      text-align: center; color: var(--text-dim); font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+    .plugin-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .plugin-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem; text-align: center;
+      transition: border-color 0.3s;
+    }
+    .plugin-card:hover { border-color: var(--yellow-dim); }
+    .plugin-card .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .plugin-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .plugin-card p { font-size: 0.8rem; color: var(--text-dim); }
+
+    /* HOW IT WORKS */
+    .how { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+    .how h2 {
+      text-align: center; font-size: 2.5rem; font-weight: 800;
+      margin-bottom: 3rem;
+    }
+    .steps { position: relative; padding-left: 2rem; }
+    .steps::before {
+      content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .step {
+      position: relative; margin-bottom: 2.5rem; padding-left: 1.5rem;
+    }
+    .step::before {
+      content: ''; position: absolute; left: -2rem; top: 0.35rem;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--yellow); border: 3px solid var(--bg);
+    }
+    .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .step p { color: var(--text-dim); font-size: 0.95rem; }
+    .step code {
+      display: inline-block; margin-top: 0.5rem;
+      background: var(--bg-code); padding: 0.3rem 0.75rem;
+      border-radius: 6px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem; color: var(--yellow);
+    }
+
+    /* PROJECT STRUCTURE */
+    .structure { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; }
+    .structure h2 {
+      text-align: center; font-size: 2.5rem; font-weight: 800;
+      margin-bottom: 2rem;
+    }
+    .tree {
+      background: var(--bg-code); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+      line-height: 1.8; color: var(--text-dim);
+    }
+    .tree .dir { color: var(--blue); }
+    .tree .file { color: var(--text); }
+    .tree .comment { color: var(--text-dim); }
+
+    /* CTA */
+    .cta {
+      padding: 6rem 2rem; text-align: center;
+      background: linear-gradient(180deg, var(--bg) 0%, #111 100%);
+    }
+    .cta h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
+    .cta p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; color: var(--text-dim); font-size: 0.85rem;
+    }
+    footer a { color: var(--yellow); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { gap: 0.75rem; }
+      .nav-links a:not(.btn-nav) { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .plugin-grid { grid-template-columns: repeat(2, 1fr); }
+      .terminal-body { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo"><img src="crow.png" alt="EasyBeezy Crow" style="height: 32px; vertical-align: middle; margin-right: 6px;"> EasyBeezy</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#plugins">Plugins</a>
+      <a href="#how">How It Works</a>
+      <a href="https://github.com/AhmedReda-662/easybeezy" target="_blank" class="btn-nav">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Open Source &middot; MIT License
+    </div>
+    <img src="crow.png" alt="EasyBeezy Crow Mascot" style="width: 200px; height: 200px; border-radius: 50%; border: 3px solid var(--yellow); margin-bottom: 2rem; object-fit: cover; box-shadow: 0 0 40px rgba(250, 204, 21, 0.2);">
+    <h1>Skip the boilerplate.<br>Build the product.</h1>
+    <p>Generate production-ready React projects in minutes. TypeScript, Vite, ESLint, Prettier, plugins — all configured automatically.</p>
+    <div class="hero-actions">
+      <a href="#install" class="btn-primary">Get Started</a>
+      <a href="https://github.com/AhmedReda-662/easybeezy" target="_blank" class="btn-secondary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- TERMINAL -->
+  <section class="terminal-section" id="install">
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">Terminal</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="dim">$</span> <span class="cmd">npx easybeezy create</span></div>
+        <div><span class="dim">? Project name:</span> <span class="white">my-app</span></div>
+        <div><span class="dim">? Select plugins:</span> <span class="white">◉ axios  ◯ zustand  ◯ tailwindcss</span></div>
+        <div>&nbsp;</div>
+        <div><span class="green">✔</span> <span class="white">Project "my-app" created successfully!</span></div>
+        <div>&nbsp;</div>
+        <div><span class="dim">  Directory:</span> <span class="white">./my-app</span></div>
+        <div><span class="dim">  Framework:</span> <span class="white">React + TypeScript + Vite</span></div>
+        <div><span class="dim">  Plugins:</span> <span class="white">axios</span></div>
+        <div>&nbsp;</div>
+        <div><span class="dim">  Next steps:</span></div>
+        <div><span class="blue">    cd my-app</span></div>
+        <div><span class="blue">    npm install</span></div>
+        <div><span class="blue">    npm run dev</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Everything you need.<br><img src="crow.png" alt="Crow" style="height: 60px; vertical-align: middle; margin: 0 8px;"> Nothing you don't.</h2>
+    <p class="subtitle">Production-ready from the first commit.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>React + Vite + TypeScript</h3>
+        <p>Modern stack with blazing fast dev server. TypeScript strict mode, path aliases, env vars — all configured.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📂</div>
+        <h3>Feature-Based Architecture</h3>
+        <p>Organized by domain, not file type. Features, shared logic, services, and app bootstrap — clean from day one.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>Plugin System</h3>
+        <p>Add Axios, Zustand, Redux Toolkit, or Tailwind CSS with a single command. No manual config needed.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔧</div>
+        <h3>Tooling Included</h3>
+        <p>ESLint + Prettier configured out of the box. Code quality from the first line you write.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Safe Defaults</h3>
+        <p>Overwrite prompts, rollback on failure, conflict detection. Never lose work or break your project.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h3>Cross-Platform</h3>
+        <p>Works on macOS, Linux, and Windows. Detects your package manager automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLUGINS -->
+  <section class="plugins" id="plugins">
+    <h2>Official Plugins</h2>
+    <p class="subtitle">Add powerful features with one command.</p>
+    <div class="plugin-grid">
+      <div class="plugin-card">
+        <div class="icon">🌐</div>
+        <h4>Axios</h4>
+        <p>HTTP client with interceptors, auto token handling, and typed responses.</p>
+      </div>
+      <div class="plugin-card">
+        <div class="icon">🐻</div>
+        <h4>Zustand</h4>
+        <p>Lightweight state management. Simple, fast, and scalable.</p>
+      </div>
+      <div class="plugin-card">
+        <div class="icon">🔄</div>
+        <h4>Redux Toolkit</h4>
+        <p>Predictable state container with slices, thunks, and dev tools.</p>
+      </div>
+      <div class="plugin-card">
+        <div class="icon">🎨</div>
+        <h4>Tailwind CSS</h4>
+        <p>Utility-first CSS framework. Style components without leaving JSX.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Create your project</h3>
+        <p>Run one command and follow the interactive prompts.</p>
+        <code>npx easybeezy create</code>
+      </div>
+      <div class="step">
+        <h3>2. Pick your plugins</h3>
+        <p>Select Axios, Zustand, Redux, or Tailwind during setup — or add them later.</p>
+        <code>easybeezy add axios</code>
+      </div>
+      <div class="step">
+        <h3>3. Start building</h3>
+        <p>Your project runs immediately. No configuration needed.</p>
+        <code>npm run dev</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT STRUCTURE -->
+  <section class="structure">
+    <h2>Generated Project Structure</h2>
+    <div class="tree">
+      <div><span class="dir">my-app/</span></div>
+      <div>&nbsp;├── <span class="dir">src/</span></div>
+      <div>&nbsp;│&nbsp;&nbsp;├── <span class="dir">app/</span> <span class="comment"># App bootstrap</span></div>
+      <div>&nbsp;│&nbsp;&nbsp;├── <span class="dir">features/</span> <span class="comment"># Feature modules</span></div>
+      <div>&nbsp;│&nbsp;&nbsp;├── <span class="dir">shared/</span> <span class="comment"># Reusable logic</span></div>
+      <div>&nbsp;│&nbsp;&nbsp;└── <span class="dir">services/</span> <span class="comment"># API layer</span></div>
+      <div>&nbsp;├── <span class="file">.env.example</span></div>
+      <div>&nbsp;├── <span class="file">eslint.config.js</span></div>
+      <div>&nbsp;├── <span class="file">tsconfig.json</span> <span class="comment"># Path aliases ready</span></div>
+      <div>&nbsp;├── <span class="file">vite.config.ts</span></div>
+      <div>&nbsp;└── <span class="file">package.json</span></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to build?</h2>
+    <p>Generate your first project in under 2 minutes.</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="https://www.npmjs.com/package/easybeezy" target="_blank" class="btn-primary">View on npm</a>
+      <a href="https://github.com/AhmedReda-662/easybeezy" target="_blank" class="btn-secondary">Star on GitHub</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Built with ❤️ by <a href="https://github.com/AhmedReda-662" target="_blank">Noah White</a> &middot; <a href="https://github.com/AhmedReda-662/easybeezy/blob/main/LICENSE" target="_blank">MIT License</a></p>
+  </footer>
+
+</body>
+</html>

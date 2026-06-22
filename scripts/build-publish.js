@@ -51,6 +51,9 @@ try {
       "ora",
     ],
     resolveExtensions: [".ts", ".js", ".json"],
+    alias: {
+      "@easybeezy/core": join(CORE_DIR, "src/index.ts"),
+    },
     nodePaths: [
       join(CLI_DIR, "src"),
       join(CORE_DIR, "src"),

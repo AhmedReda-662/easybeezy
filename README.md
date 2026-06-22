@@ -168,7 +168,7 @@ Available aliases:
 ### Setup
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/AhmedReda-662/easybeezy.git
 cd easybeezy
 npm install
 ```

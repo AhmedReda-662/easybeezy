@@ -1,5 +1,5 @@
 import { mkdirSync, existsSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
 import { execSync } from "node:child_process";
 import { copyTemplateFiles } from "./template-copier.js";
 import { loadPlugins, getPluginByName } from "../plugins/registry.js";
@@ -69,11 +69,8 @@ export async function initProject(options: ProjectInitOptions): Promise<ProjectI
         const destBase = join(projectDir, fileMapping.target);
 
         if (existsSync(srcBase)) {
-          const destDir = destBase.substring(0, destBase.lastIndexOf("/"));
-          if (destDir && !existsSync(destDir)) {
-            mkdirSync(destDir, { recursive: true });
-          }
-          if (existsSync(srcBase) && !existsSync(destBase)) {
+          mkdirSync(dirname(destBase), { recursive: true });
+          if (!existsSync(destBase)) {
             const content = fileMapping.template
               ? applyVars(readFileSync(srcBase, "utf-8"), templateVars)
               : readFileSync(srcBase, "utf-8");
