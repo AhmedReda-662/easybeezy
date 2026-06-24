@@ -1,6 +1,6 @@
 {
   "name": "easybeezy",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "React project bootstrap generator with modular enhancements",
   "workspaces": [
     "packages/*"
