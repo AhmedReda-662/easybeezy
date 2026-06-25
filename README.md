@@ -1,5 +1,7 @@
 # EasyBeezy
 
+<img width="1254" height="1254" alt="ChatGPT Image Jun 23, 2026, 08_16_08 PM" src="https://github.com/user-attachments/assets/1d92e5f1-30eb-4cc0-ac80-5a801c5fcc42" />
+
 > Skip the boilerplate. Build the product.
 
 A React CLI tool that generates production-ready frontend projects in minutes.
