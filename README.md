@@ -1,5 +1,7 @@
 # EasyBeezy
 
+<img width="1254" height="1254" alt="ChatGPT Image Jun 23, 2026, 08_16_08 PM" src="https://github.com/user-attachments/assets/1d92e5f1-30eb-4cc0-ac80-5a801c5fcc42" />
+
 [![npm version](https://img.shields.io/npm/v/easybeezy)](https://www.npmjs.com/package/easybeezy)
 [![npm downloads](https://img.shields.io/npm/dm/easybeezy)](https://www.npmjs.com/package/easybeezy)
 [![license](https://img.shields.io/npm/l/easybeezy)](https://github.com/AhmedReda-662/easybeezy/blob/main/LICENSE)
