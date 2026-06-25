@@ -1,5 +1,10 @@
 # EasyBeezy
 
+[![npm version](https://img.shields.io/npm/v/easybeezy)](https://www.npmjs.com/package/easybeezy)
+[![npm downloads](https://img.shields.io/npm/dm/easybeezy)](https://www.npmjs.com/package/easybeezy)
+[![license](https://img.shields.io/npm/l/easybeezy)](https://github.com/AhmedReda-662/easybeezy/blob/main/LICENSE)
+[![node](https://img.shields.io/node/v/easybeezy)](https://www.npmjs.com/package/easybeezy)
+
 > Skip the boilerplate. Build the product.
 
 A React CLI tool that generates production-ready frontend projects in minutes.
